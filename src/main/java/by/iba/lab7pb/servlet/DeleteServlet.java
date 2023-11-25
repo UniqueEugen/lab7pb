@@ -11,11 +11,11 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "deleteServlet", value = "/delete")
-public class Delete extends HttpServlet {
+public class DeleteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Dao dao = new DaoImpl();
         dao.deleteBook((Integer.parseInt(req.getParameter("id"))));
-        req.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(req, resp);
+        resp.sendRedirect(req.getContextPath()+"/GroupListServlet");
     }
 }

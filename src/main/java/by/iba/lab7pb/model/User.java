@@ -1,9 +1,6 @@
-package by.iba.model;
+package by.iba.lab7pb.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @Data
 public class User {
@@ -11,10 +8,13 @@ public class User {
     private int id;
     private String login;
     private byte[] passw;
+    private boolean type;
 
-    public User(String name, byte[] password) {
+    public User(String name, byte[] password, boolean type, int id) {
         this.login = name;
         this.passw = password;
+        this.type = type;
+        this.id = id;
     }
 
 

@@ -1,4 +1,4 @@
-package by.iba.util;
+package by.iba.lab7pb.util;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;

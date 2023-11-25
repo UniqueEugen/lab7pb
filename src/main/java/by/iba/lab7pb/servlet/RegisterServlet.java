@@ -1,8 +1,12 @@
-package servlet;
+package by.iba.lab7pb.servlet;
 
 
 import by.iba.lab7pb.dao.UserDao;
+import by.iba.lab7pb.model.Person;
 import by.iba.lab7pb.model.User;
+import by.iba.lab7pb.service.Dao;
+import by.iba.lab7pb.service.DaoImpl;
+import by.iba.lab7pb.util.HashPassword;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,13 +19,16 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
-        String name = request.getParameter("newLoginName");
+        String username = request.getParameter("newLoginName");
         String password = request.getParameter("newPassword");
+        String name = request.getParameter("name");
+        String phone = request.getParameter("phone");
+        String mail = request.getParameter("mail");
 
-        UserDao daoUser = new UserDao();
-        User user = new User(name, HashPassword.getHash(password));
+        Dao daoUser = new DaoImpl();
+        User user = new User(username, HashPassword.getHash(password), false, 0);
         if (daoUser.insertUser(user)) {
-
+            daoUser.insertPerson(new Person(name,phone, mail, daoUser.getLastUser()));
             request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
         } else {
 

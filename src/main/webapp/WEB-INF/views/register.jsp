@@ -19,13 +19,22 @@
         <form action="RegisterServlet" method="POST">
             <h1> Регистрация нового пользователя </h1>
             <div>
-                <input placeholder="Введите имя" required=""name="newLoginName" type="text" />
+                <input placeholder="Введите логин" required="" name="newLoginName" type="text" />
             </div>
             <div>
                 <input placeholder="Введите пароль" id ="password" required="" name="newPassword" type="password" />
             </div>
             <div>
-                <input type="submit" value="Зарегистрировать"/>
+                <input placeholder="Введите Ваше имя" id ="name" required="" name="name" type="text" />
+            </div>
+            <div>
+                <input placeholder="Введите телефон" id ="phone" required="" name="phone" type="tel" />
+            </div>
+            <div>
+                <input placeholder="Введите email" id ="mail" required="" name="mail" type="email" />
+            </div>
+            <div>
+                <input type="submit" value="Register"/>
             </div>
         </form>
     </section>

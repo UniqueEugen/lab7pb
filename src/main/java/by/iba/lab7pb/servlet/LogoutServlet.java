@@ -1,4 +1,4 @@
-package servlet;
+package by.iba.lab7pb.servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

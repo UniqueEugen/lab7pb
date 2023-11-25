@@ -1,4 +1,4 @@
-package by.iba.util;
+package by.iba.lab7pb.util;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

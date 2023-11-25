@@ -1,20 +1,18 @@
-package by.iba.dao;
+package by.iba.lab7pb.dao;
 
-import by.iba.model.User;
-import by.iba.util.ConnectorDB;
+import by.iba.lab7pb.model.User;
+import by.iba.lab7pb.util.ConnectorDB;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class UserDao {
 
-    private final static String SQL_GET_USER = "select login,passw from users where login=? and passw=?";
+    private final static String SQL_GET_USER = "select * from users where login=? and passw=?";
 
 
     private final static String SQL_CHECK_LOGIN = "SELECT login FROM users WHERE login = ?";
     private final static String SQL_INSERT_USER = "INSERT INTO users(login ,passw) VALUES (? , ?)";
+    private final static String SQL_GET_LAST = "SELECT * FROM users ORDER BY id DESC LIMIT 1";
 
     private Connection connection;
 
@@ -37,7 +35,7 @@ public class UserDao {
         }
     }
 
-    public boolean isValidUser(final String login, final byte[] password) {
+    public User isValidUser(final String login, final byte[] password) {
 
         PreparedStatement ps = null;
         try {
@@ -49,7 +47,7 @@ public class UserDao {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                return true;
+                return new User(rs.getString("login"), "xxx".getBytes(), rs.getBoolean("type"), rs.getInt("id"));
             }
 
         } catch (SQLException e) {
@@ -65,7 +63,7 @@ public class UserDao {
             }
         }
 
-        return false;
+        return null;
     }
 
     public boolean insertUser(User user) {
@@ -85,6 +83,18 @@ public class UserDao {
         } catch (SQLException e) { e.printStackTrace();
         }
         return true;
+    }
+    public int getLastUser(){
+        try{
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(SQL_GET_LAST);
+            resultSet.next();
+            return resultSet.getInt("id");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 
 
