@@ -38,7 +38,7 @@ public class GroupListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        PersonDao daoPerson = new PersonDao();
+        Dao daoPerson = new DaoImpl();
         request.setAttribute("group", daoPerson.getPersons());
         request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
     }

@@ -17,12 +17,8 @@ public class UserDao {
     private Connection connection;
 
 
-    public UserDao() {
-        try {
-            connection = ConnectorDB.getConnection();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public UserDao(Connection connection) {
+        this.connection = connection;
     }
 
     public void closeConnection() {

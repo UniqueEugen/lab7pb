@@ -3,6 +3,8 @@ package by.iba.lab7pb.servlet;
 
 import by.iba.lab7pb.dao.UserDao;
 import by.iba.lab7pb.model.User;
+import by.iba.lab7pb.service.Dao;
+import by.iba.lab7pb.service.DaoImpl;
 import by.iba.lab7pb.util.HashPassword;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
@@ -30,7 +32,7 @@ public class LoginServlet extends HttpServlet {
         String name = request.getParameter("name");
         String password = request.getParameter("password");
 
-        UserDao daoUser = new UserDao();
+        Dao daoUser = new DaoImpl();
         User user = daoUser.isValidUser(name, HashPassword.getHash(password));
         if(user!=null) {
 

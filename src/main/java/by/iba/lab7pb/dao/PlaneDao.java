@@ -13,12 +13,8 @@ public class PlaneDao {
     private final static String SQL_GET_PLANE = "SELECT * FROM plane WHERE id =?";
     private final static String SQL_INSERT_PLANE = "INSERT INTO plane(num, company, cityFrom, cityTo, date, ticketsAll, ticketsNotBooked) VALUES (?,?,?,?,?,?,?)";
     private Connection connection;
-    public PlaneDao() {
-        try {
-            connection = ConnectorDB.getConnection();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public PlaneDao(Connection connection) {
+        this.connection = connection;
     }
 
     public List<Plane> getPlanes() {

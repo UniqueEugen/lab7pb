@@ -18,12 +18,11 @@ public class TicketDao {
     private final static String SQL_GET_TICKET = "SELECT * FROM tickets WHERE num =?";
 
     private Connection connection;
-    public TicketDao() {
-        try {
-            connection = ConnectorDB.getConnection();
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public TicketDao(Connection connection) {
+        if(connection!=null){
+            this.connection = connection;
         }
+
     }
 
 

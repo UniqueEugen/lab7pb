@@ -19,14 +19,10 @@ public class PersonDao {
 
     private static Connection connection;
 
-    public PersonDao() {
-        try {
-            if (connection == null) {
-                connection = ConnectorDB.getConnection();
-                logger.info("get connection");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public PersonDao(Connection connection) {
+        if (connection != null) {
+            this.connection = connection;
+            logger.info("get connection");
         }
     }
 
