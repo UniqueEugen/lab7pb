@@ -1,0 +1,188 @@
+body {
+    background-image: url(VBR3.gif);
+    background-size: 1518px 850px;
+    background-attachment: fixed;
+    position: page;
+}
+
+
+.Zagolovok {
+    text-align: center;
+    color: #4682B4;
+}
+
+ol {
+    margin-left: 200px;
+    text-align: center;
+    color: #DEB887;
+    font-size: 20px;
+    width: 200px;
+    float:left;
+}
+
+
+
+
+li {
+    text-align: left;
+}
+    li:hover{
+        background-color:rgba(0,0,0,0.4);
+    }
+a {
+    color: #F0E68C;
+    text-decoration: none;
+}
+
+    a:visited {
+        color: antiquewhite;
+    }
+
+.ZhesTb {
+    width: 200px;
+    position: relative;
+    height: 200px;
+}
+
+button {
+    border-radius: 9px;
+    background-image: url(but.jpg);
+    height: 50px;
+    font-size: 16px;
+    background-size: 185px;
+    text-align: center;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom:50px;
+    right:50px;
+}
+footer {
+    position: relative;
+    color: #696969;
+    background-color: #778899;
+    margin: 0px;
+    left: -20;
+    width:1531;
+    bottom:-10;
+}
+
+.konez {
+    white-space: pre;
+    white-space: pre;
+    text-align: left;
+    margin-left: 40px;
+    float: left;
+    width: 350px;
+    padding: 5px;
+}
+
+.konez2 {
+    color: #C0C0C0;
+}
+
+    .konez2:visited {
+        color: #A9A9A9;
+    }
+
+.Polny_Konez {
+    margin-bottom: 10px;
+    vertical-align: bottom;
+    clear: left;
+    text-align:center;
+}
+
+.konez3 {
+    color: #C0C0C0;
+    white-space: pre;
+    text-align: left;
+    float: left;
+    padding: 5px;
+}
+
+.konez4 {
+    color: #696969;
+}
+
+    .konez4:visited {
+        color: #A9A9A9;
+    }
+
+marquee {
+    color: #FF8C00;
+}
+
+.knop_ssbl {
+    color: antiquewhite;
+}
+
+
+.ZhesTb2 {
+    width: 195px;
+    float: left;
+    display: block;
+    height: 350px;
+    position: relative;
+    overflow: scroll;
+    text-align: center;
+}
+
+    .ZhesTb2::-webkit-scrollbar {
+        display: none;
+    }
+
+    .ZhesTb2:hover {
+        border-left: 2px solid red;
+    }
+
+#first {
+    border-left: none;
+}
+
+#last {
+    border-right: none;
+}
+
+.knop_ssbl {
+    color: antiquewhite;
+    left: 20px;
+}
+
+.knop_ssblN {
+    position: absolute;
+    left: 1360;
+}
+
+.premium {
+    color: #FFD700;
+}
+
+.kollection {
+    color: #00BFFF;
+}
+.logo{
+    text-align:center;
+}
+ul {
+    margin-left: 200px;
+    text-align: center;
+    color: #DEB887;
+    font-size: 20px;
+    width: 200px;
+    clear:left;
+}
+.newKonez{
+
+}
+.Info {
+    color: #A9A9A9;
+    font-size: 20px;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+    .Info:hover {
+        background: #8B0000;
+        color: #E6E6FA;
+    }
+h1{
+    text-align:center;
+}
